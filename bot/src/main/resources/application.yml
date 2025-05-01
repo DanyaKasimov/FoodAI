@@ -1,0 +1,24 @@
+server:
+  port: 8099
+
+spring:
+  application:
+    name: bot-service
+
+logging:
+  file:
+    path: ./bot/logs
+  level:
+    root: info
+    org:
+      springframework:
+        web: warn
+      hibernate: error
+    web: warn
+
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
