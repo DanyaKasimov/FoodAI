@@ -1,9 +1,22 @@
 server:
   port: 9090
 
+
+storage:
+  path: files
+
 spring:
   application:
     name: app-service
+  datasource:
+    url: jdbc:postgresql://localhost:5433/foodai
+    username: postgres
+    password: root
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
 
 logging:
   file:
@@ -22,3 +35,10 @@ springdoc:
     path: /v3/api-docs
   swagger-ui:
     path: /swagger-ui.html
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    preference-ip-address: true
